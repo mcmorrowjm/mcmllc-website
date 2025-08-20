@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCM LLC Services | Professional IT Assessment</title>
+    <meta name="description" content="MCM LLC Services – 15+ years of professional IT expertise. Partnered with Ashe Cosgrove Corp to deliver enterprise-level IT solutions for growing businesses.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        header .tagline {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            font-weight: 300;
+            margin-bottom: 1rem;
+        }
+        
+        header .subtitle {
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 6px;
+            display: inline-block;
+            opacity: 0.9;
+        }
+        
+        .credentials-bar {
+            background: #ffffff;
+            padding: 2rem 1rem;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .credentials-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .credential {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .credential .icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            color: #1e40af;
+        }
+        
+        .credential h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #1f2937;
+        }
+        
+        .credential p {
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+        
+        main {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        
+        .welcome-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 3rem;
+        }
+        
+        .welcome-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+        }
+        
+        .welcome-section p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #374151;
+        }
+        
+        .partnership-highlight {
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid #bfdbfe;
+            margin: 2rem 0;
+        }
+        
+        .partnership-highlight h3 {
+            color: #1e40af;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .partnership-item {
+            background: rgba(255, 255, 255, 0.7);
+            padding: 1.5rem;
+            border-radius: 6px;
+            border: 1px solid rgba(30, 64, 175, 0.1);
+        }
+        
+        .partnership-item h4 {
+            color: #1e40af;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .partnership-item p {
+            color: #4b5563;
+            font-size: 0.9rem;
+        }
+        
+        .form-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 3rem;
+        }
+        
+        .form-section h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1f2937;
+        }
+        
+        .form-section .form-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #6b7280;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .form-embed {
+            width: 100%;
+            height: 900px;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .privacy-notice {
+            text-align: center;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 6px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .privacy-notice p {
+            font-size: 0.9rem;
+            color: #6b7280;
+            margin: 0;
+        }
+        
+        footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        footer h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .contact-item .icon {
+            color: #60a5fa;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1rem;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            header .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .welcome-section,
+            .form-section {
+                padding: 2rem;
+            }
+            
+            .credentials-container {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .partnership-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-embed {
+                height: 1000px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .welcome-section,
+            .form-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MCM LLC Services</h1>
+        <p class="tagline">Professional IT Solutions • Trusted Partnership • Proven Results</p>
+        <div class="subtitle">
+            <strong>15+ Years of Experience</strong> • Partnered with Ashe Cosgrove Corp
+        </div>
+    </header>
+    
+    <div class="credentials-bar">
+        <div class="credentials-container">
+            <div class="credential">
+                <span class="icon">🎯</span>
+                <h3>Experienced Leadership</h3>
+                <p>15+ years solving complex IT challenges across all business sizes</p>
+            </div>
+            <div class="credential">
+                <span class="icon">🤝</span>
+                <h3>Strategic Partnership</h3>
+                <p>Combined expertise of local service and enterprise resources</p>
+            </div>
+            <div class="credential">
+                <span class="icon">⚡</span>
+                <h3>Proactive Approach</h3>
+                <p>Prevent problems before they impact your business operations</p>
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <section class="welcome-section">
+            <h2>Welcome</h2>
+            <p>
+                I'm James, a seasoned IT professional with over 15 years of experience helping businesses like yours succeed with reliable, secure, and future-proof technology solutions. Through my partnership with <strong>Ashe Cosgrove Corp</strong>, we deliver enterprise-level IT support with the personal attention your business deserves.
+            </p>
+            <p>
+                This assessment will help us understand your current IT environment and identify opportunities to optimize your technology investment, enhance security, and improve operational efficiency.
+            </p>
+            
+            <div class="partnership-highlight">
+                <h3>Why Our Partnership Benefits You</h3>
+                <div class="partnership-grid">
+                    <div class="partnership-item">
+                        <h4>Personal Service</h4>
+                        <p>Direct access to experienced local expertise with rapid response times and personalized solutions</p>
+                    </div>
+                    <div class="partnership-item">
+                        <h4>Enterprise Resources</h4>
+                        <p>24/7 monitoring, advanced security tools, and scalable infrastructure through Ashe Cosgrove</p>
+                    </div>
+                    <div class="partnership-item">
+                        <h4>Proven Process</h4>
+                        <p>Industry best practices, compliance standards, and strategic technology planning</p>
+                    </div>
+                    <div class="partnership-item">
+                        <h4>Cost Optimization</h4>
+                        <p>Eliminate technology waste and maximize ROI through strategic planning and implementation</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="form-section">
+            <h2>IT Assessment & Client Intake</h2>
+            <p class="form-description">
+                Please complete this comprehensive assessment to help us prepare a customized technology strategy for your business. This information will be securely transmitted to our team for analysis and follow-up.
+            </p>
+            
+<!-- REPLACE WITH YOUR MICROSOFT FORMS EMBED CODE -->
+<iframe 
+    class="form-embed"
+    src="https://forms.cloud.microsoft/r/AbHpFxG4tp?embed=true" 
+    frameborder="0" 
+    marginwidth="0" 
+    marginheight="0" 
+    style="border: none; max-width:100%; max-height:100vh" 
+    allowfullscreen 
+    webkitallowfullscreen 
+    mozallowfullscreen 
+    msallowfullscreen> 
+</iframe>            
+            <div class="privacy-notice">
+                <p>
+                    ✅ <strong>Secure & Confidential:</strong> Your information is encrypted and used solely for preparing your IT assessment • 
+                    ✅ <strong>No Spam Policy:</strong> We respect your privacy and will not share your data with third parties • 
+                    ✅ <strong>Professional Use Only:</strong> Information is integrated directly into our CRM for seamless service delivery
+                </p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <h3>MCM LLC Services</h3>
+        <p>Professional IT Solutions • Partnered with Ashe Cosgrove Corp</p>
+        <p>Serving businesses across Northern California with enterprise-level technology solutions</p>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <span class="icon">📧</span>
+                <span>leads@mcmllcservices.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="icon">🌐</span>
+                <span>mcmllcservices.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="icon">📍</span>
+                <span>Northern California</span>
+            </div>
+        </div>
+        
+        <p style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2025 MCM LLC Services. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>
