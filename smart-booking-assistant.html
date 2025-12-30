@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Booking Assistant | MCM LLC Services</title>
+  <meta name="description" content="Stop losing website leads to phone tag. A done-for-you Smart Booking Assistant that books appointments and routes requests automatically." />
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:rgba(255,255,255,0.06);
+      --cardBorder:rgba(255,255,255,0.12);
+      --text:#ffffff;
+      --muted:rgba(255,255,255,0.84);
+      --muted2:rgba(255,255,255,0.68);
+      --accent:#60a5fa;
+      --accentText:#0b1220;
+      --shadow: 0 18px 50px rgba(0,0,0,0.35);
+      --radius: 18px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 30% -10%, rgba(96,165,250,0.28), transparent 60%),
+                  radial-gradient(900px 600px at 95% 10%, rgba(147,197,253,0.18), transparent 60%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:56px 18px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom:18px;
+      opacity:0.95;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; font-weight:800; letter-spacing:0.2px;
+    }
+    .brand .dot{width:10px; height:10px; border-radius:999px; background:var(--accent);}
+    .nav a{
+      color:var(--muted2); text-decoration:none; font-weight:650; margin-left:14px;
+    }
+    .nav a:hover{color:var(--muted)}
+    .card{
+      background:var(--card);
+      border:1px solid var(--cardBorder);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:26px;
+      backdrop-filter: blur(8px);
+    }
+    .hero{
+      padding:34px 26px;
+    }
+    .pill{
+      display:inline-block;
+      padding:7px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.14);
+      font-size:0.92rem;
+      color:var(--muted);
+      margin-bottom:12px;
+    }
+    h1{margin:0 0 10px; font-size:2.2rem; line-height:1.15; letter-spacing:-0.02em;}
+    .subhead{margin:0; font-size:1.08rem; color:var(--muted); max-width:780px;}
+    .ctaRow{display:flex; flex-wrap:wrap; gap:12px; align-items:center; margin-top:18px;}
+    .cta{
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      border:0; border-radius:14px; padding:14px 16px;
+      background:var(--accent); color:var(--accentText);
+      font-weight:900; cursor:pointer; font-size:1.05rem;
+      box-shadow: 0 10px 26px rgba(96,165,250,0.25);
+      transition: transform 140ms ease, filter 140ms ease;
+    }
+    .cta:hover{filter:brightness(1.02); transform: translateY(-1px);}
+    .cta:active{transform: translateY(0);}
+    .ctaSecondary{
+      display:inline-flex; gap:10px; align-items:center; justify-content:center;
+      border-radius:14px; padding:14px 16px;
+      border:1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      color:var(--text);
+      font-weight:850; cursor:pointer; font-size:1.02rem;
+      text-decoration:none;
+    }
+    .micro{margin-top:10px; font-size:0.95rem; color:var(--muted2);}
+    .grid{
+      display:grid; grid-template-columns: 1fr; gap:14px;
+      margin-top:16px;
+    }
+    .grid2{
+      display:grid; grid-template-columns: 1fr; gap:14px;
+      margin-top:16px;
+    }
+    @media(min-width: 900px){
+      .grid{grid-template-columns: 1.15fr 0.85fr;}
+      .grid2{grid-template-columns: 1fr 1fr;}
+    }
+    h2{margin:0 0 10px; font-size:1.35rem; letter-spacing:-0.01em;}
+    p{margin:0 0 10px; color:var(--muted);}
+    ul{margin:10px 0 0 18px; color:var(--muted); line-height:1.75;}
+    li{margin:6px 0;}
+    .sectionTitle{margin-top:18px; font-weight:900; color:var(--text);}
+    .pricing{
+      display:grid; grid-template-columns:1fr; gap:14px; margin-top:14px;
+    }
+    @media(min-width:900px){
+      .pricing{grid-template-columns:1fr 1fr;}
+    }
+    .priceBox{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .priceBox .kicker{color:var(--muted2); font-weight:800; font-size:0.92rem;}
+    .priceBox .big{font-size:1.8rem; font-weight:950; margin-top:6px;}
+    .priceBox .desc{color:var(--muted); margin-top:6px;}
+    .foot{
+      margin-top:16px;
+      font-size:0.95rem;
+      color:var(--muted2);
+    }
+    .divider{
+      height:1px; background: rgba(255,255,255,0.12);
+      margin:18px 0;
+    }
+    .miniCta{
+      margin-top: 10px;
+      display:flex; gap:12px; flex-wrap:wrap; align-items:center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand"><span class="dot"></span> MCM LLC Services</div>
+      <div class="nav">
+        <a href="/">Home</a>
+        <a href="/demo.html">Demo</a>
+      </div>
+    </div>
+
+    <div class="card hero">
+      <div class="pill">Done-for-you • White-labeled • Managed</div>
+      <h1>Stop Losing Website Leads to Phone Tag</h1>
+      <p class="subhead">
+        A done-for-you Smart Booking Assistant that <strong>books appointments and routes requests automatically</strong> —
+        without long forms, spam, or “chatbot” confusion.
+      </p>
+
+      <div class="ctaRow">
+        <button class="cta" id="sba-open" type="button" onclick="MCM_OPEN_SBA()">
+          Get Scheduled <span aria-hidden="true">→</span>
+        </button>
+        <a class="ctaSecondary" href="/demo.html">View Live Demo</a>
+      </div>
+
+      <div class="micro">Takes less than a minute • No back-and-forth emails</div>
+
+      <div class="grid">
+        <div class="card" style="box-shadow:none;">
+          <h2>The problem</h2>
+          <p>Most small business websites lose leads because:</p>
+          <ul>
+            <li>Calls go to voicemail</li>
+            <li>Contact forms create delays</li>
+            <li>Urgent requests aren’t prioritized</li>
+            <li>Owners get interrupted by pricing questions</li>
+          </ul>
+        </div>
+
+        <div class="card" style="box-shadow:none;">
+          <h2>The solution</h2>
+          <p>Your Smart Booking Assistant sits on your site and:</p>
+          <ul>
+            <li><strong>Books appointments</strong> instantly</li>
+            <li>Routes urgent requests correctly</li>
+            <li>Captures qualified requests when needed</li>
+            <li>Runs 24/7 without staff</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="grid2">
+        <div class="card" style="box-shadow:none;">
+          <h2>How it works</h2>
+          <ul>
+            <li>Visitor clicks <strong>Get Scheduled</strong></li>
+            <li>Selects urgency + service</li>
+            <li>Either books on your calendar or submits a quick request</li>
+          </ul>
+          <p class="foot">No apps. No logins. No training.</p>
+          <div class="miniCta">
+            <button class="cta" type="button" onclick="MCM_OPEN_SBA()">Get Scheduled →</button>
+            <span class="micro" style="margin:0;">Most requests take less than a minute.</span>
+          </div>
+        </div>
+
+        <div class="card" style="box-shadow:none;">
+          <h2>What’s included</h2>
+          <ul>
+            <li><strong>One-time setup:</strong> install, configuration, branding, go-live testing</li>
+            <li><strong>Monthly care:</strong> hosting, monitoring, config updates, deliverability oversight</li>
+          </ul>
+          <p class="foot">This is a managed service — not software you have to babysit.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card" style="box-shadow:none;">
+        <h2>Pricing</h2>
+        <p>We price this like a service retainer (not SaaS). Most clients are all-in for a one-time setup plus a small monthly fee to keep it running.</p>
+
+        <div class="pricing">
+          <div class="priceBox">
+            <div class="kicker">One-time setup</div>
+            <div class="big">$497–$997</div>
+            <div class="desc">Install + configure for your business, including services, routing, and go-live testing.</div>
+          </div>
+          <div class="priceBox">
+            <div class="kicker">Monthly care</div>
+            <div class="big">$199/mo</div>
+            <div class="desc">Hosting, monitoring, updates, and ongoing management. Quiet reliability.</div>
+          </div>
+        </div>
+
+        <p class="foot"><strong>Proof:</strong> This is the same system we run on our own website.</p>
+
+        <div class="miniCta">
+          <button class="cta" type="button" onclick="MCM_OPEN_SBA()">Get Scheduled →</button>
+          <span class="micro" style="margin:0;">See if it fits your business.</span>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="card" style="box-shadow:none;">
+        <h2>Need it installed?</h2>
+        <p>If you want this on your site, we’ll install and manage it for you. Click below and we’ll route your request appropriately.</p>
+        <div class="miniCta">
+          <button class="cta" type="button" onclick="MCM_OPEN_SBA()">Get Scheduled →</button>
+          <a class="ctaSecondary" href="/">Back to Home</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Smart Booking Assistant -->
+  <script
+    src="https://mcmorrowjm.github.io/mcm-sba-widget/widget.js"
+    data-css="https://mcmorrowjm.github.io/mcm-sba-widget/widget.css"
+    data-client="mcm_8x2q7p"
+    data-api="https://mcm-sba-proxy.mcmorrow-james-m.workers.dev"
+    defer
+  ></script>
+
+  <!-- Reliable opener (polls until launcher exists) -->
+  <script>
+    (function () {
+      function findLauncher() {
+        return (
+          document.querySelector('.sba-launcher') ||
+          document.querySelector('#sba-launcher') ||
+          document.querySelector('[data-sba-launcher]') ||
+          document.querySelector('button[aria-label*="Scheduled"]') ||
+          document.querySelector('button[aria-label*="Schedule"]')
+        );
+      }
+
+      function tryOpen() {
+        try {
+          if (window.SBA && typeof window.SBA.open === "function") { window.SBA.open(); return true; }
+          if (window.MCMSBA && typeof window.MCMSBA.open === "function") { window.MCMSBA.open(); return true; }
+          if (window.SmartBookingAssistant && typeof window.SmartBookingAssistant.open === "function") { window.SmartBookingAssistant.open(); return true; }
+        } catch (e) {}
+
+        const launcher = findLauncher();
+        if (launcher) { launcher.click(); return true; }
+        return false;
+      }
+
+      window.MCM_OPEN_SBA = function () {
+        if (tryOpen()) return;
+        let attempts = 0;
+        const maxAttempts = 40;
+        const t = setInterval(() => {
+          attempts++;
+          if (tryOpen() || attempts >= maxAttempts) clearInterval(t);
+        }, 100);
+      };
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("sba-open");
+        if (btn) btn.addEventListener("click", window.MCM_OPEN_SBA);
+      });
+    })();
+  </script>
+</body>
+</html>
