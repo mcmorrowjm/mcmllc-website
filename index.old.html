@@ -1,421 +1,502 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCM LLC Services | Professional IT Assessment</title>
-    <meta name="description" content="MCM LLC Services – 15+ years of professional IT expertise. Partnered with Ashe Cosgrove Corp to deliver enterprise-level IT solutions for growing businesses.">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        
-        header {
-            background: #1f2937;
-            color: white;
-            padding: 3rem 1rem;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        header h1 {
-            font-size: 2.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        
-        header .tagline {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-        
-        header .subtitle {
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 6px;
-            display: inline-block;
-            opacity: 0.9;
-        }
-        
-        .credentials-bar {
-            background: #ffffff;
-            padding: 2rem 1rem;
-            border-bottom: 1px solid #e5e7eb;
-        }
-        
-        .credentials-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-        
-        .credential {
-            padding: 1.5rem;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .credential .icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-            color: #1e40af;
-        }
-        
-        .credential h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: #1f2937;
-        }
-        
-        .credential p {
-            font-size: 0.9rem;
-            color: #6b7280;
-        }
-        
-        main {
-            max-width: 900px;
-            margin: 3rem auto;
-            padding: 0 1rem;
-        }
-        
-        .welcome-section {
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e5e7eb;
-            margin-bottom: 3rem;
-        }
-        
-        .welcome-section h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: #1f2937;
-        }
-        
-        .welcome-section p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            color: #374151;
-        }
-        
-        .partnership-highlight {
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
-            padding: 2rem;
-            border-radius: 8px;
-            border: 1px solid #bfdbfe;
-            margin: 2rem 0;
-        }
-        
-        .partnership-highlight h3 {
-            color: #1e40af;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .partnership-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .partnership-item {
-            background: rgba(255, 255, 255, 0.7);
-            padding: 1.5rem;
-            border-radius: 6px;
-            border: 1px solid rgba(30, 64, 175, 0.1);
-        }
-        
-        .partnership-item h4 {
-            color: #1e40af;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .partnership-item p {
-            color: #4b5563;
-            font-size: 0.9rem;
-        }
-        
-        .form-section {
-            background: white;
-            padding: 3rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            border: 1px solid #e5e7eb;
-            margin-bottom: 3rem;
-        }
-        
-        .form-section h2 {
-            font-size: 1.8rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: #1f2937;
-        }
-        
-        .form-section .form-description {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #6b7280;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .form-embed {
-            width: 100%;
-            height: 900px;
-            border: 1px solid #e5e7eb;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-        
-        .privacy-notice {
-            text-align: center;
-            margin-top: 1.5rem;
-            padding: 1rem;
-            background: #f9fafb;
-            border-radius: 6px;
-            border: 1px solid #e5e7eb;
-        }
-        
-        .privacy-notice p {
-            font-size: 0.9rem;
-            color: #6b7280;
-            margin: 0;
-        }
-        
-        footer {
-            background: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        
-        footer h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        footer p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 0.5rem;
-        }
-        
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .contact-item .icon {
-            color: #60a5fa;
-        }
-        
-        @media (max-width: 768px) {
-            header {
-                padding: 2rem 1rem;
-            }
-            
-            header h1 {
-                font-size: 2rem;
-            }
-            
-            header .tagline {
-                font-size: 1.1rem;
-            }
-            
-            .welcome-section,
-            .form-section {
-                padding: 2rem;
-            }
-            
-            .credentials-container {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-            
-            .partnership-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-embed {
-                height: 1000px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .welcome-section,
-            .form-section {
-                padding: 1.5rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MCM LLC Services | Priority Booking Widget + Managed IT</title>
+  <meta name="description" content="Two ways we help Santa Rosa businesses move faster: Priority Booking Widget (bookings + routing) and Managed IT & Cybersecurity (via Ashe Cosgrove partnership)." />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a2e;
+      --text:#e8eefc;
+      --muted:#a7b5d6;
+      --line:rgba(255,255,255,.10);
+      --accent:#1F6AE1;
+      --link:#66a3ff;
+      --shadow:0 18px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1080px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      background: radial-gradient(900px 520px at 20% -10%, rgba(31,106,225,.35), transparent 60%),
+                  radial-gradient(900px 520px at 90% 0%, rgba(102,163,255,.20), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+
+    a{color:var(--link); text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+
+    header{
+      padding: 28px 0 18px;
+      border-bottom:1px solid var(--line);
+      background: linear-gradient(to bottom, rgba(255,255,255,.04), transparent);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 240px;
+    }
+    .logo{
+      width:40px; height:40px; border-radius:12px;
+      background: linear-gradient(135deg, rgba(31,106,225,.95), rgba(102,163,255,.85));
+      box-shadow: 0 10px 28px rgba(31,106,225,.25);
+    }
+    .brand-title{
+      display:flex; flex-direction:column;
+    }
+    .brand-title strong{font-size:15px; letter-spacing:.2px}
+    .brand-title span{font-size:13px; color:var(--muted)}
+
+    nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 14px;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    nav a{
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+    }
+    nav a:hover{
+      color: var(--text);
+      border-color: rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      text-decoration:none;
+    }
+
+    main{padding: 26px 0 64px;}
+
+    .card{
+      background: rgba(15,26,46,.86);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: var(--radius);
+      padding: 26px;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero{
+      padding: 28px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      background: rgba(31,106,225,.14);
+      border:1px solid rgba(31,106,225,.35);
+      color: var(--text);
+      font-size:12px;
+      margin-right:8px;
+    }
+
+    h1{
+      margin: 14px 0 10px;
+      font-size: 34px;
+      letter-spacing: -0.02em;
+      line-height: 1.12;
+    }
+
+    .sub{
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 78ch;
+    }
+
+    .ctaRow{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      align-items:center;
+      margin-top: 18px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      border:0;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 900;
+      cursor: pointer;
+      transition: transform 140ms ease, filter 140ms ease;
+      white-space: nowrap;
+    }
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(31,106,225,.95), rgba(102,163,255,.85));
+      color: #071023;
+      box-shadow: 0 10px 28px rgba(31,106,225,.22);
+    }
+    .btnPrimary:hover{filter: brightness(1.03); transform: translateY(-1px);}
+    .btnPrimary:active{transform: translateY(0);}
+
+    .btnGhost{
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      border:1px solid rgba(255,255,255,.12);
+    }
+    .btnGhost:hover{background: rgba(255,255,255,.06); transform: translateY(-1px);}
+    .btnGhost:active{transform: translateY(0);}
+
+    .micro{
+      margin-top: 10px;
+      font-size: 13px;
+      color: rgba(167,181,214,.92);
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+    @media (min-width: 940px){
+      .grid2{grid-template-columns: 1fr 1fr;}
+      h1{font-size: 40px;}
+    }
+
+    .choice{
+      position: relative;
+      overflow: hidden;
+    }
+    .choice h2{
+      margin: 0 0 8px;
+      font-size: 18px;
+      letter-spacing: -0.01em;
+    }
+    .choice p{
+      margin: 0 0 10px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .bullets{
+      margin: 10px 0 0 18px;
+      color: var(--text);
+      opacity: .92;
+    }
+    .bullets li{margin: 6px 0;}
+    .choiceFooter{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      margin-top: 14px;
+    }
+    .choiceTag{
+      font-size: 12px;
+      color: rgba(167,181,214,.92);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.03);
+    }
+
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin: 18px 0;
+    }
+
+    .sectionTitle{
+      font-size: 16px;
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+
+    /* Testimonial carousel */
+    .tWrap{
+      display:flex;
+      gap: 14px;
+      align-items:stretch;
+      flex-wrap:wrap;
+    }
+    .tQuote{
+      flex: 1 1 520px;
+      background: rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius: 16px;
+      padding: 18px;
+    }
+    .tText{
+      font-size: 14px;
+      color: var(--text);
+      opacity: .95;
+      margin: 0 0 10px;
+    }
+    .tMeta{
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0;
+    }
+    .tControls{
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      margin-top: 12px;
+    }
+    .dotBtn{
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(255,255,255,.10);
+      cursor: pointer;
+    }
+    .dotBtn.active{
+      background: rgba(102,163,255,.9);
+      border-color: rgba(102,163,255,.9);
+    }
+
+    footer{
+      padding: 18px 0 26px;
+      border-top:1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footRow{
+      display:flex; gap: 10px 18px; flex-wrap:wrap;
+      align-items:center; justify-content:space-between;
+    }
+    .footLinks a{margin-right: 12px; font-weight: 750;}
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>MCM LLC Services</h1>
-        <p class="tagline">Professional IT Solutions • Trusted Partnership • Proven Results</p>
-        <div class="subtitle">
-            <strong>15+ Years of Experience</strong> • Partnered with Ashe Cosgrove Corp
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-title">
+            <strong>MCM LLC Services</strong>
+            <span>Santa Rosa, CA • Local tech solutions</span>
+          </div>
         </div>
-    </header>
-    
-    <div class="credentials-bar">
-        <div class="credentials-container">
-            <div class="credential">
-                <span class="icon">🎯</span>
-                <h3>Experienced Leadership</h3>
-                <p>15+ years solving complex IT challenges across all business sizes</p>
-            </div>
-            <div class="credential">
-                <span class="icon">🤝</span>
-                <h3>Strategic Partnership</h3>
-                <p>Combined expertise of local service and enterprise resources</p>
-            </div>
-            <div class="credential">
-                <span class="icon">⚡</span>
-                <h3>Proactive Approach</h3>
-                <p>Prevent problems before they impact your business operations</p>
-            </div>
-        </div>
+
+        <nav aria-label="Primary">
+          <a href="/index.html">Home</a>
+          <a href="/demo.html">Demo</a>
+          <a href="/smart-booking-assistant.html">Priority Booking Widget</a>
+          <a href="/managed-it.html">Managed IT</a>
+          <a href="/privacy.html">Privacy</a>
+        </nav>
+      </div>
     </div>
-    
-    <main>
-        <section class="welcome-section">
-            <h2>Welcome</h2>
-            <p>
-                I'm James, a seasoned IT professional with over 15 years of experience helping businesses like yours succeed with reliable, secure, and future-proof technology solutions. Through my partnership with <strong>Ashe Cosgrove Corp</strong>, we deliver enterprise-level IT support with the personal attention your business deserves.
-            </p>
-            <p>
-                This assessment will help us understand your current IT environment and identify opportunities to optimize your technology investment, enhance security, and improve operational efficiency.
-            </p>
-            
-            <div class="partnership-highlight">
-                <h3>Why Our Partnership Benefits You</h3>
-                <div class="partnership-grid">
-                    <div class="partnership-item">
-                        <h4>Personal Service</h4>
-                        <p>Direct access to experienced local expertise with rapid response times and personalized solutions</p>
-                    </div>
-                    <div class="partnership-item">
-                        <h4>Enterprise Resources</h4>
-                        <p>24/7 monitoring, advanced security tools, and scalable infrastructure through Ashe Cosgrove</p>
-                    </div>
-                    <div class="partnership-item">
-                        <h4>Proven Process</h4>
-                        <p>Industry best practices, compliance standards, and strategic technology planning</p>
-                    </div>
-                    <div class="partnership-item">
-                        <h4>Cost Optimization</h4>
-                        <p>Eliminate technology waste and maximize ROI through strategic planning and implementation</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section class="form-section">
-            <h2>IT Assessment & Client Intake</h2>
-            <p class="form-description">
-                Please complete this comprehensive assessment to help us prepare a customized technology strategy for your business. This information will be securely transmitted to our team for analysis and follow-up.
-            </p>
-            
-<!-- REPLACE WITH YOUR MICROSOFT FORMS EMBED CODE -->
-<iframe 
-    class="form-embed"
-    src="https://forms.cloud.microsoft/r/AbHpFxG4tp?embed=true" 
-    frameborder="0" 
-    marginwidth="0" 
-    marginheight="0" 
-    style="border: none; max-width:100%; max-height:100vh" 
-    allowfullscreen 
-    webkitallowfullscreen 
-    mozallowfullscreen 
-    msallowfullscreen> 
-</iframe>            
-            <div class="privacy-notice">
-                <p>
-                    ✅ <strong>Secure & Confidential:</strong> Your information is encrypted and used solely for preparing your IT assessment • 
-                    ✅ <strong>No Spam Policy:</strong> We respect your privacy and will not share your data with third parties • 
-                    ✅ <strong>Professional Use Only:</strong> Information is integrated directly into our CRM for seamless service delivery
-                </p>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <h3>MCM LLC Services</h3>
-        <p>Professional IT Solutions • Partnered with Ashe Cosgrove Corp</p>
-        <p>Serving businesses across Northern California with enterprise-level technology solutions</p>
-        
-        <div class="contact-info">
-            <div class="contact-item">
-                <span class="icon">📧</span>
-                <span>leads@mcmllcservices.com</span>
-            </div>
-            <div class="contact-item">
-                <span class="icon">🌐</span>
-                <span>mcmllcservices.com</span>
-            </div>
-            <div class="contact-item">
-                <span class="icon">📍</span>
-                <span>Northern California</span>
-            </div>
-        </div>
-        
-        <p style="margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.6;">
-            &copy; 2025 MCM LLC Services. All rights reserved.
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="card hero" aria-labelledby="heroTitle">
+        <span class="pill">Done-for-you</span>
+        <span class="pill">Local-first</span>
+        <span class="pill">Fast installs</span>
+
+        <h1 id="heroTitle">Two ways we help Santa Rosa businesses move faster.</h1>
+        <p class="sub">
+          Choose what you need today: the <strong>Priority Booking Widget</strong> (to stop missed bookings and route urgent requests),
+          or <strong>Managed IT & Cybersecurity</strong> (via our partnership with Ashe Cosgrove).
         </p>
-    </footer>
-<script
-  src="https://mcmorrowjm.github.io/mcm-sba-widget/widget.js"
-  data-css="https://mcmorrowjm.github.io/mcm-sba-widget/widget.css"
-  data-client="mcm-test"
-  data-api="https://mcm-sba-proxy.mcmorrow-james-m.workers.dev"
-  defer
-></script>
+
+        <div class="ctaRow">
+          <button class="btn btnPrimary" type="button" id="cta-open-widget">
+            Open Priority Booking Widget <span aria-hidden="true">→</span>
+          </button>
+          <a class="btn btnGhost" href="/demo.html">View Live Demo</a>
+          <a class="btn btnGhost" href="/managed-it.html">Request Managed IT Support</a>
+        </div>
+
+        <div class="micro">No phone tag • No long forms • Urgent requests get prioritized</div>
+
+        <div class="divider"></div>
+
+        <div class="grid2" role="list" aria-label="Primary services">
+          <!-- Priority Booking Widget -->
+          <article class="card choice" role="listitem" style="box-shadow:none;">
+            <h2>Priority Booking Widget</h2>
+            <p>
+              A done-for-you widget that turns website visitors into scheduled appointments — and routes requests correctly when they’re not ready to book.
+            </p>
+            <ul class="bullets">
+              <li><strong>Booking-first:</strong> visitors schedule instantly (Calendly-powered)</li>
+              <li><strong>Urgency routing:</strong> “today” requests get prioritized</li>
+              <li><strong>Qualified requests:</strong> capture details when needed</li>
+              <li><strong>Installed + managed:</strong> you don’t babysit anything</li>
+            </ul>
+            <div class="choiceFooter">
+              <button class="btn btnPrimary" type="button" id="cta-open-widget-2">Get Booked Faster →</button>
+              <a class="btn btnGhost" href="/smart-booking-assistant.html">Learn More</a>
+              <span class="choiceTag">Best for: service businesses</span>
+            </div>
+          </article>
+
+          <!-- Managed IT -->
+          <article class="card choice" role="listitem" style="box-shadow:none;">
+            <h2>Managed IT & Cybersecurity</h2>
+            <p>
+              Reliable IT support with enterprise-level tools — delivered with local attention. Intake is handled on a dedicated page so nothing gets mixed.
+            </p>
+            <ul class="bullets">
+              <li><strong>Proactive support:</strong> fewer fires, faster fixes</li>
+              <li><strong>Security-minded:</strong> protect devices, users, and data</li>
+              <li><strong>Business-ready:</strong> backups, monitoring, best practices</li>
+              <li><strong>Partner-backed:</strong> Ashe Cosgrove resources</li>
+            </ul>
+            <div class="choiceFooter">
+              <a class="btn btnPrimary" href="/managed-it.html">Go to IT Intake →</a>
+              <a class="btn btnGhost" href="/privacy.html">Privacy Policy</a>
+              <span class="choiceTag">Best for: teams & offices</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="divider"></div>
+
+        <section aria-labelledby="socialProofTitle">
+          <h2 class="sectionTitle" id="socialProofTitle">What business owners say</h2>
+          <div class="tWrap">
+            <div class="tQuote" aria-live="polite">
+              <p class="tText" id="tText">“Placeholder testimonial — add your first Santa Rosa wins here.”</p>
+              <p class="tMeta" id="tMeta">— Name, Business Type (Santa Rosa)</p>
+
+              <div class="tControls" aria-label="Testimonial controls">
+                <button class="dotBtn active" type="button" data-t="0" aria-label="Testimonial 1"></button>
+                <button class="dotBtn" type="button" data-t="1" aria-label="Testimonial 2"></button>
+                <button class="dotBtn" type="button" data-t="2" aria-label="Testimonial 3"></button>
+              </div>
+              <div class="micro">We’ll swap these placeholders as soon as your first installs go live.</div>
+            </div>
+
+            <div class="tQuote">
+              <p class="tText"><strong>Quick next step:</strong> click “Open Priority Booking Widget” and run a real flow.</p>
+              <p class="tMeta">If it fits your business, we’ll install it and manage it for you.</p>
+              <div class="ctaRow" style="margin-top:12px;">
+                <button class="btn btnPrimary" type="button" id="cta-open-widget-3">Open Widget →</button>
+                <a class="btn btnGhost" href="/demo.html">See Demo</a>
+              </div>
+              <div class="micro">Most requests take less than a minute.</div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <footer>
+        <div class="footRow">
+          <div>
+            © <span id="year"></span> MCM LLC Services • Santa Rosa, CA
+          </div>
+          <div class="footLinks">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/sms-opt-in.html">SMS Opt-In</a>
+            <a href="mailto:booking@mcmllcservices.com">booking@mcmllcservices.com</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <!-- Priority Booking Widget (same centrally hosted widget for now) -->
+  <script
+    src="https://mcmorrowjm.github.io/mcm-sba-widget/widget.js"
+    data-css="https://mcmorrowjm.github.io/mcm-sba-widget/widget.css"
+    data-client="mcm_8x2q7p"
+    data-api="https://mcm-sba-proxy.mcmorrow-james-m.workers.dev"
+    defer
+  ></script>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Testimonial carousel (placeholders)
+    const testimonials = [
+      { text: "“Placeholder testimonial — add your first Santa Rosa wins here.”", meta: "— Name, Business Type (Santa Rosa)" },
+      { text: "“We stopped missing urgent requests and customers started booking without calling.”", meta: "— Name, Service Business (Santa Rosa)" },
+      { text: "“Setup was fast. Now our site turns visitors into scheduled jobs.”", meta: "— Name, Home Services (Sonoma County)" }
+    ];
+
+    function setTestimonial(i){
+      document.getElementById("tText").textContent = testimonials[i].text;
+      document.getElementById("tMeta").textContent = testimonials[i].meta;
+      document.querySelectorAll(".dotBtn").forEach(btn => btn.classList.remove("active"));
+      const active = document.querySelector(`.dotBtn[data-t="${i}"]`);
+      if(active) active.classList.add("active");
+    }
+
+    document.querySelectorAll(".dotBtn").forEach(btn => {
+      btn.addEventListener("click", () => setTestimonial(Number(btn.dataset.t)));
+    });
+
+    // Widget opener (reliable)
+    function findLauncher() {
+      return (
+        document.querySelector(".sba-launcher") ||
+        document.querySelector("#sba-launcher") ||
+        document.querySelector("[data-sba-launcher]")
+      );
+    }
+
+    function tryOpenWidget() {
+      try {
+        if (window.SBA && typeof window.SBA.open === "function") { window.SBA.open(); return true; }
+        if (window.MCMSBA && typeof window.MCMSBA.open === "function") { window.MCMSBA.open(); return true; }
+        if (window.SmartBookingAssistant && typeof window.SmartBookingAssistant.open === "function") { window.SmartBookingAssistant.open(); return true; }
+      } catch (e) {}
+      const launcher = findLauncher();
+      if (launcher) { launcher.click(); return true; }
+      return false;
+    }
+
+    function openWidgetWithRetry() {
+      if (tryOpenWidget()) return;
+      let attempts = 0;
+      const maxAttempts = 40; // ~4 seconds
+      const t = setInterval(() => {
+        attempts++;
+        if (tryOpenWidget() || attempts >= maxAttempts) clearInterval(t);
+      }, 100);
+    }
+
+    ["cta-open-widget","cta-open-widget-2","cta-open-widget-3"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.addEventListener("click", openWidgetWithRetry);
+    });
+
+    // Auto-rotate testimonials every 7s (optional)
+    let tIndex = 0;
+    setInterval(() => {
+      tIndex = (tIndex + 1) % testimonials.length;
+      setTestimonial(tIndex);
+    }, 7000);
+  </script>
 </body>
 </html>
