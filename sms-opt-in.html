@@ -4,40 +4,166 @@
   <meta charset="utf-8" />
   <title>SMS Opt-In | MCM LLC</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
   <style>
-    body { font-family: system-ui, sans-serif; background:#0b1220; color:#fff; padding:40px }
-    .card { max-width:640px; margin:auto; background:#111c33; padding:24px; border-radius:12px }
-    h1 { margin-top:0 }
-    label { display:block; margin:16px 0; line-height:1.4 }
-    a { color:#66a3ff }
-    button { margin-top:20px; padding:12px 18px; border:0; border-radius:8px; background:#1f6ae1; color:#fff }
+    :root{
+      --bg:#0b1220;
+      --card:#111c33;
+      --text:#ffffff;
+      --muted:#b9c7e6;
+      --line:rgba(255,255,255,.12);
+      --accent:#1f6ae1;
+      --link:#66a3ff;
+      --radius:14px;
+      --max:720px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    body{
+      margin:0;
+      font-family:var(--font);
+      background: var(--bg);
+      color:var(--text);
+      padding:40px 16px;
+    }
+    .card{
+      max-width:var(--max);
+      margin:0 auto;
+      background: var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+    }
+    h1{margin:0 0 10px; font-size:26px;}
+    p{margin:10px 0; color:var(--muted); line-height:1.55;}
+    .row{margin-top:18px;}
+    label{display:block; font-weight:600; margin:0 0 8px;}
+    input[type="text"], input[type="tel"]{
+      width:100%;
+      box-sizing:border-box;
+      padding:12px 12px;
+      border-radius:10px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      outline: none;
+      font-size: 15px;
+    }
+    input[type="text"]::placeholder, input[type="tel"]::placeholder{color:rgba(255,255,255,.55)}
+    .help{font-size:13px; color:rgba(255,255,255,.70); margin-top:6px;}
+    .checks{margin-top:16px;}
+    .check{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background: rgba(255,255,255,.03);
+      margin-top:12px;
+    }
+    .check input{margin-top:3px;}
+    .check span{line-height:1.45; color:var(--text); font-size:14px;}
+    a{color:var(--link); text-decoration:none;}
+    a:hover{text-decoration:underline;}
+    .btn{
+      margin-top:18px;
+      padding:12px 18px;
+      border:0;
+      border-radius:10px;
+      background: var(--accent);
+      color: #fff;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .note{
+      margin-top:14px;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background: rgba(255,255,255,.03);
+      color: rgba(255,255,255,.75);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+    .ok{
+      display:none;
+      margin-top:16px;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid rgba(76, 195, 255, .35);
+      background: rgba(76, 195, 255, .10);
+      color:#dff4ff;
+      font-size:14px;
+    }
   </style>
 </head>
 <body>
   <div class="card">
     <h1>SMS Opt-In</h1>
     <p>
-      This form is used to enable SMS notifications for business owners using
-      MCM LLC’s Smart Booking Assistant.
+      This form enables <strong>transactional SMS notifications</strong> for business owners using
+      MCM LLC’s Smart Booking Assistant (lead notifications and booking alerts).
     </p>
 
-    <form>
-      <label>
-        <input type="checkbox" required />
-        By checking this box, I consent to receive transactional text messages from
-        MCM LLC related to lead notifications and booking alerts.
-        Reply STOP to opt out. Reply HELP for help.
-        Message and data rates may apply. Message frequency may vary.
-      </label>
+    <form id="smsOptInForm">
+      <div class="row">
+        <label for="fullName">Name (optional)</label>
+        <input id="fullName" name="fullName" type="text" placeholder="James McMorrow" autocomplete="name" />
+      </div>
 
-      <label>
-        <input type="checkbox" required />
-        I agree to the <a href="/terms" target="_blank">Terms and Conditions</a> and
-        <a href="/privacy" target="_blank">Privacy Policy</a>.
-      </label>
+      <div class="row">
+        <label for="phone">Mobile Phone Number (required)</label>
+        <input
+          id="phone"
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          placeholder="+1 707 555 1234"
+          autocomplete="tel"
+          required
+        />
+        <div class="help">Enter a mobile number where you want to receive SMS alerts.</div>
+      </div>
 
-      <button type="submit">Submit</button>
+      <div class="checks">
+        <div class="check">
+          <input id="consent" name="consent" type="checkbox" required />
+          <span>
+            By checking this box, I consent to receive <strong>transactional</strong> text messages from MCM LLC
+            related to lead notifications and booking alerts. Reply <strong>STOP</strong> to opt out.
+            Reply <strong>HELP</strong> for help. Message and data rates may apply. Message frequency may vary.
+          </span>
+        </div>
+
+        <div class="check">
+          <input id="legal" name="legal" type="checkbox" required />
+          <span>
+            I agree to the <a href="/terms" target="_blank" rel="noopener">Terms and Conditions</a> and
+            <a href="/privacy" target="_blank" rel="noopener">Privacy Policy</a>.
+          </span>
+        </div>
+      </div>
+
+      <button class="btn" type="submit">Submit</button>
+
+      <div class="note">
+        Note: This form is used for compliance and onboarding. No marketing texts are sent. Alerts are only sent
+        to the phone number provided by the business owner who opts in.
+      </div>
+
+      <div class="ok" id="okMsg">
+        ✅ Submitted (demo). For compliance, the phone field and consent language above are what carriers review.
+      </div>
     </form>
   </div>
+
+  <script>
+    // This is a compliance/demo page. Submission is not required for carrier approval.
+    // Prevent navigation and show a success state so the form feels complete.
+    document.getElementById("smsOptInForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      document.getElementById("okMsg").style.display = "block";
+    });
+  </script>
 </body>
 </html>
